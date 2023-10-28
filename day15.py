@@ -58,7 +58,7 @@ def calculate_coin(prompt_res):
     return bal
 
 
-def make_coffee(resources, ingre):
+def make_coffee(resources, ingre, user_respnse):
     exhau_resourc = None
     for resource in resources.keys():
         if resource == "milk" and user_respnse == "espresso":
@@ -84,7 +84,7 @@ while True:
         continue
     elif cal_coin > 0:
         print(f"Here is ${cal_coin} in change.")
-        resource = make_coffee(resources, MENU)
+        resource = make_coffee(resources, MENU, user_respnse)
         if resource:
             print(f"Sorry there is not enough {resource}")
         else:
