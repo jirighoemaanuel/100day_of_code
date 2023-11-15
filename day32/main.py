@@ -7,9 +7,14 @@ load_dotenv()
 password = os.getenv("PASSWORD")
 email = os.getenv("EMAIL")
 
-connection = smtplib.SMTP("smtp.gmail.com")
-connection.starttls()
-connection.login(user=email, password=password)
-connection.sendmail(
-    from_addr=email, to_addrs="emmanueljirigho@gmail.com", msg="Hello")
-connection.close()
+
+with smtplib.SMTP('smtp.gmail.com') as connection:
+
+    connection.starttls()
+    connection.login(user=email, password=password)
+    connection.sendmail(
+        from_addr=email,
+        to_addrs="emmanueljirigho@gmail.com",
+        msg="Subject:Hello\n\nEmail body",
+    )
+    connection.close()
