@@ -10,6 +10,7 @@ Japanese,English
 これ,This
 それ,That
 ここ,Here
+そこ,There
 誰,Who
 何,What
 どこ,Where
@@ -33,6 +34,7 @@ Japanese,English
 五つ,Five
 大きい,Big
 長い,Long
+広い,Wide
 厚い,Thick
 重い,Heavy
 小さい,Small
@@ -58,6 +60,7 @@ Japanese,English
 棒,Stick
 果物,Fruit
 種子,Seed
+葉,Leaf
 根,Root
 皮,Skin
 肉,Meat
@@ -103,14 +106,17 @@ Japanese,English
 恐れる,Fear
 眠る,Sleep
 生きる,Live
+死ぬ,Die
 殺す,Kill
 戦う,Fight
 狩る,Hunt
 打つ,Hit
 切る,Cut
+分ける,Split
 刺す,Stab
 擦る,Scratch
 掘る,Dig
+泳ぐ,Swim
 飛ぶ,Fly
 歩く,Walk
 来る,Come
@@ -136,6 +142,7 @@ Japanese,English
 膨らむ,Swell
 太陽,Sun
 月,Moon
+星,Star
 水,Water
 雨,Rain
 川,River
@@ -149,6 +156,7 @@ Japanese,English
 雲,Cloud
 霧,Fog
 空,Sky
+風,Wind
 雪,Snow
 氷,Ice
 煙,Smoke
@@ -166,6 +174,7 @@ Japanese,English
 日,Day
 年,Year
 暖かい,Warm
+冷たい,Cold
 満ちる,Full
 新しい,New
 古い,Old
@@ -187,6 +196,7 @@ Japanese,English
 左,Left
 で,At
 で,In
+で,With
 と,And
 もし,If
 なぜ,Because
