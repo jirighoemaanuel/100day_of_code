@@ -30,7 +30,7 @@ weather_slice = waether_data['hourly'][:12]
 will_rain = False
 for hour_data in weather_slice:
     condition_code = hour_data['weather'][0]['id']
-    if int(400) < 700:
+    if int(condition_code) < 700:
         will_rain = True
 if will_rain:
     with smtplib.SMTP("smtp.gmail.com") as connection:
