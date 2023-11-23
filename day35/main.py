@@ -1,5 +1,6 @@
 import requests
 import smtplib
+# from weather_param import weather_parameter
 from dotenv import load_dotenv
 import os
 load_dotenv()
@@ -9,9 +10,6 @@ API_KEY = os.getenv("API_KEY")
 MY_EMAIL = os.getenv("EMAIL")
 MY_PASSWORD = os.getenv("PASSWORD")
 
-OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
-
-
 weather_parameter = {
     "lat": 7.3045033,
     "lon": 5.1412033,
@@ -19,6 +17,10 @@ weather_parameter = {
     "units": 'metric',
     "exclude": 'current,minutely,daily'
 }
+
+
+OWM_Endpoint = "https://api.openweathermap.org/data/2.5/onecall"
+
 
 response = requests.get(
     url=OWM_Endpoint, params=weather_parameter)
