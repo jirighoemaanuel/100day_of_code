@@ -23,7 +23,7 @@ stock_response = requests.get(url=STOCK_ENDPOINT)
 stock_response.raise_for_status()
 stock_data = stock_response.json()
 yesterday_closing_price = [prices for (
-    day, prices) in stock_data["Time Series (Daily)"].items()][1]
+    prices) in stock_data["Time Series (Daily)"].values()][1]
 print(yesterday_closing_price['4. close'])
 # TODO 2. - Get the day before yesterday's closing stock price
 
