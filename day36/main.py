@@ -13,8 +13,8 @@ COMPANY_NAME = "Tesla Inc"
 
 # Find your Account SID and Auth Token at twilio.com/console
 # and set the environment variables. See http://twil.io/secure
-account_sid = os.environ["TWILIO_SID"]
-auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+account_sid = os.getenv["TWILIO_SID"]
+auth_token = os.getenv["TWILIO_AUTH_TOKEN"]
 
 
 client = Client(account_sid, auth_token)
