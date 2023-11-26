@@ -33,25 +33,19 @@ data = response.json()["exercises"]
 exercise_data = [[info["duration_min"],
                   info["nf_calories"], info["name"]] for info in data]
 
-exercise_data = []
 
 for info in data:
     duration, calories, exercise_name = info["duration_min"], info["nf_calories"], info["name"]
-    exercise_data.append({
-        "workouts": {
-            "date": datetime.datetime.now().strftime("%d%m%Y"),
+    exercise_data = json.dumps({
+        "workout": {
+            "date": datetime.datetime.now().strftime("%d/%m/%Y"),
             "time": datetime.datetime.now().strftime("%H:%M:%S"),
             "exercise": exercise_name.title(),
             "duration": duration,
             "calories": calories,
         }
     })
-
-
-sheet_body = json.dumps(exercise_data)
-print(sheet_body)
-
-resp = requests.post(url=sheet_endpoint, data=sheet_body,
-                     headers=sheet_headers)
-resp.raise_for_status()
-print(resp.status_code)
+    resp = requests.post(url=sheet_endpoint, data=exercise_data,
+                         headers=sheet_headers)
+    resp.raise_for_status()
+    print(resp.text)
