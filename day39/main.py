@@ -1,15 +1,12 @@
-# This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirements.
-import requests
+# This file will need to use the DataManager,FlightSearch, FlightData, NotificationManager classes to achieve the program requirement
 from pprint import pprint
 from flight_search import FlightSearch
+from data_manager import DataManager
 
 
-endpoint = "https://api.sheety.co/9e8f4da9e713d31f33c5798b7f6dff05/copyOfFlightDeals/prices"
+sheet = DataManager()
+sheet_data = sheet.get_sheet_data()
+sheet.put_sheet_data()
 
 
-response = requests.get(url=endpoint)
-response.raise_for_status()
-sheet_data = response.json()["prices"]
-
-FlightSearch(sheet_data)
-print(sheet_data)
+pprint(sheet_data.get_sheet_data())
