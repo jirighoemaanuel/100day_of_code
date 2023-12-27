@@ -27,8 +27,24 @@ class FlightData:
         }
 
     def check_flight_data(self):
+
         response = requests.get(
             url=f"https://api.tequila.kiwi.com/search", params=self.params, headers=self.headers)
         response.raise_for_status()
         data = response.json()
-        return (self.departure_city, self.departure_city_code, self.arrival_city, self.arrival_city_code, data['data'][1]['price'])
+
+        # Unix timestamps from your JSON
+        dTime_unix = data['data'][0]['dTime']
+        aTime_unix = data['data'][0]['aTime']
+
+        # Convert to datetime objects
+        dTime_dt = datetime.utcfromtimestamp(dTime_unix)
+        aTime_dt = datetime.utcfromtimestamp(aTime_unix)
+
+        # Format the datetime objects as strings with year-month-day format
+        dTime_str = dTime_dt.strftime('%Y-%m-%d %I:%M:%S %p UTC')
+        aTime_str = aTime_dt.strftime('%Y-%m-%d %I:%M:%S %p UTC')
+
+        flightdata = {"departure_city": self.departure_city, "departure_city_code": self.departure_city_code,
+                      "arrival_city": self.arrival_city, "arrival_city_code": self.arrival_city_code, "price": data['data'][1]['price'], "dTime": dTime_str, "aTime": aTime_str}
+        return flightdata
