@@ -3,6 +3,8 @@ import requests
 
 SHEETY_PRICES_ENDPOINT = "https://api.sheety.co/9e8f4da9e713d31f33c5798b7f6dff05/copyOfFlightDeals/prices"
 
+SHEETY_USERS_ENDPOINT = "https://api.sheety.co/9e8f4da9e713d31f33c5798b7f6dff05/copyOfFlightDeals/users"
+
 
 class DataManager:
 
@@ -27,3 +29,10 @@ class DataManager:
                 json=new_data
             )
             print(response.text)
+
+    def get_customer_emails(self):
+        customers_endpoint = SHEETY_USERS_ENDPOINT
+        response = requests.get(url=customers_endpoint)
+        data = response.json()
+        self.customer_data = data["users"]
+        return self.customer_data

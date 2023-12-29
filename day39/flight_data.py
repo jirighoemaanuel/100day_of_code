@@ -12,6 +12,8 @@ class FlightData:
     six_months_str = six_months.strftime("%Y-%m-%d")
 
     def __init__(self, fly_to, arrival_city):
+        # self.stop_oves = 0
+        # self.via_city = ""
         self.departure_city = "Lagos"
         self.departure_city_code = "LOS"
         self.arrival_city = arrival_city
