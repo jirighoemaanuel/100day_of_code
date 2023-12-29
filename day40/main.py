@@ -3,7 +3,7 @@ from data_manager import DataManager
 from flight_search import FlightSearch
 from notification_manager import NotificationManager
 
-ORIGIN_CITY_IATA = "LON"
+ORIGIN_CITY_IATA = "LOS"
 
 data_manager = DataManager()
 flight_search = FlightSearch()
