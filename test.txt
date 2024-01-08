@@ -1,0 +1,105 @@
+#https://www.draw.io/?lightbox=1&highlight=0000ff&edit=_blank&layers=1&nav=1&title=Treasure%20Island%20Conditional.drawio#Uhttps%3A%2F%2Fdrive.google.com%2Fuc%3Fid%3D1oDe4ehjWZipYRsVfeAx2HyB7LCQ8_Fvi%26export%3Ddownload
+
+# import random
+
+# HANGMANPICS = ['''
+#   +---+
+#   |   |
+#       |
+#       |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#       |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|   |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\\  |
+#       |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\\  |
+#  /    |
+#       |
+# =========''', '''
+#   +---+
+#   |   |
+#   O   |
+#  /|\\  |
+#  / \\  |
+#       |
+# =========''']
+
+# # Word bank of animals
+# words = ('ant baboon badger bat bear beaver camel cat clam cobra cougar '
+#          'coyote crow deer dog donkey duck eagle ferret fox frog goat '
+#          'goose hawk lion lizard llama mole monkey moose mouse mule newt '
+#          'otter owl panda parrot pigeon python rabbit ram rat raven '
+#          'rhino salmon seal shark sheep skunk sloth snake spider '
+#          'stork swan tiger toad trout turkey turtle weasel whale wolf '
+#          'wombat zebra ').split()
+
+# print("""  _   _   _   _   _   _  
+#  / \ / \ / \ / \ / \ / \ 
+# ( H | A | N | G | M | A | N )
+#  \_/ \_/ \_/ \_/ \_/ \_/ 
+# """)
+
+# import random
+
+# # List of possible words to guess
+# words = ["apple", "banana", "cherry", "date", "elderberry"]
+
+# # Select a random word from the list
+# word_to_guess = random.choice(words)
+
+# # Create a variable to keep track of the player's guesses
+# incorrect_guesses = 0
+
+# # Create a list to store the correct guesses
+# correct_guesses = ["_"] * len(word_to_guess)
+
+# print("Welcome to Hangman!")
+
+# while True:
+#     # Display the current state of the word
+#     print(" ".join(correct_guesses))
+
+#     # Ask the player for a letter guess
+#     guess = input("Guess a letter: ").lower()
+
+#     if guess in word_to_guess:
+#         # If the guess is correct, update the correct_guesses list
+#         for i in range(len(word_to_guess)):
+#             if word_to_guess[i] == guess:
+#                 correct_guesses[i] = guess
+#     else:
+#         # If the guess is incorrect, increment the incorrect_guesses count
+#         incorrect_guesses += 1
+
+#     # Display the Hangman figure based on the number of incorrect guesses
+#     print(HANGMANPICS[incorrect_guesses])
+
+#     # Check if the player has won or lost
+#     if "".join(correct_guesses) == word_to_guess:
+#         print("Congratulations! You guessed the word:", word_to_guess)
+#         break
+#     elif incorrect_guesses == len(HANGMANPICS) - 1:
+#         print("You're out of guesses! The word was:", word_to_guess)
+#         break
