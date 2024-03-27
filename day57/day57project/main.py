@@ -12,9 +12,11 @@ def blog():
     print(blog_data)
     return render_template("index.html", blogs=blog_data)
 
-@app.route('/post/<id>')
+
+@app.route('/post/<post_id>')
 def post():
-    
+    pass
+
 
 if __name__ == "__main__":
     app.run(debug=True)
