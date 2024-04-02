@@ -4,14 +4,16 @@ from bs4 import BeautifulSoup
 from dotenv import load_dotenv
 import requests
 import os
-
+import datetime
 load_dotenv()
 
 client_id = os.getenv("SPOTIFY_CLIENT_ID")
 client_secret = os.getenv("SPOTIFY_CLIENT_SECRET")
 
-date = input(
-    "What year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
+
+date = str(datetime.datetime.today() - datetime.timedelta(days=3)).split()[0]
+# date = input(
+#     "What year do you want to travel to? Type the date in this format YYYY-MM-DD: ")
 response = requests.get(f"https://www.billboard.com/charts/hot-100/{date}")
 yc_web_page = response.text
 soup = BeautifulSoup(yc_web_page, 'html.parser')

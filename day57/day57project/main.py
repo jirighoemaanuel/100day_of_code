@@ -9,13 +9,15 @@ app = Flask(__name__)
 def blog():
     response = requests.get("https://api.npoint.io/471904fd18302b1232a6")
     blog_data = response.json()
-    print(blog_data)
     return render_template("index.html", blogs=blog_data)
 
 
 @app.route('/post/<post_id>')
-def post():
-    pass
+def post(post_id):
+    response = requests.get("https://api.npoint.io/471904fd18302b1232a6")
+    blog_data = response.json()
+    post_data = blog_data[int(post_id) - 1]
+    return render_template("post.html", post=post_data)
 
 
 if __name__ == "__main__":
